@@ -1,10 +1,21 @@
+import Image from 'next/image'
 import React from 'react'
 
 function Header() {
   return (
-    <div>header
-        <br />
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati perspiciatis consequatur laudantium eum aliquam a illo deserunt voluptates, tempora dolor adipisci, et impedit accusantium quis nihil! Eveniet totam ea adipisci!
+    <div>
+      header
+<div className="relative w-60 h-50 bg-red-500">
+  <Image
+    src="/Slice-5_4.avif"
+    alt="logo"
+    fill
+    className="object-cover"
+    sizes='auto'
+    priority
+  />
+  </div>
+      
     </div>
   )
 }
