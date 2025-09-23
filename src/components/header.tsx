@@ -27,7 +27,10 @@ function Header() {
         <li>
           <Link href="/contact">contact</Link>
         </li>
-        <li>help</li>
+        <li>
+          <Link href="/form">form</Link>
+        </li>
+    
     
       </ul>
     </div>
