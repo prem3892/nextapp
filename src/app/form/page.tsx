@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from "react";
 
-function page() {
+function Form() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [mobile, setMobile] = useState("");
@@ -90,4 +90,4 @@ function handleInput(e:React.ChangeEvent<HTMLInputElement>) {
   );
 }
 
-export default page;
+export default Form;
