@@ -1,32 +1,41 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 
 function Form() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [mobile, setMobile] = useState("");
-  const [pass, setPass] = useState("");
-  const [cpass, setCpass] = useState("");
+  // const [name, setName] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [mobile, setMobile] = useState("");
+  // const [pass, setPass] = useState("");
+  // const [cpass, setCpass] = useState("");
+  // function handleInput(e:React.ChangeEvent<HTMLInputElement>) {
+  //     setName(e.target.value);
+  //     setEmail(e.target.value);
+  //     setMobile(e.target.value);
+  //     setPass(e.target.value);
+  //     setCpass(e.target.value);
+  // }
 
-
-
-function handleInput(e:React.ChangeEvent<HTMLInputElement>) {
-    setName(e.target.value);
-    setEmail(e.target.value);
-    setMobile(e.target.value);
-    setPass(e.target.value);
-    setCpass(e.target.value);
-}
-
+  const [input, setInput] = useState({
+    name: "",
+    email: "",
+    mobile: "",
+    pass: "",
+    cpass: "",
+  });
+  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const { name, value } = e.target;
+    setInput((prev) => ({ ...prev, [name]: value }));
+  }
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    if(name =="") return alert("name is required")
-    console.log("name", name);
-    console.log("email", email);
-    console.log("mobile", mobile);
-    console.log("pass", pass);
-    console.log("pass", cpass);
+    if (input.name == "") return alert("name is required");
+    console.log("name", input.name);
+    console.log("email", input.email);
+    console.log("mobile", input.mobile);
+    console.log("pass", input.pass);
+    console.log("pass", input.cpass);
+    setInput({ name: "", email: "", mobile: "", pass: "", cpass: "" });
   }
 
   return (
@@ -35,52 +44,62 @@ function handleInput(e:React.ChangeEvent<HTMLInputElement>) {
         <form action="" onSubmit={handleSubmit}>
           <input
             type="text"
-            name=""
+            name="name"
             placeholder="name"
             className="border border-black"
             id=""
+            value={input.name}
             // onChange={(e) => setName(e.target.value)}
-            onChange={handleInput}
+            // onChange={handleInput}
+            onChange={handleChange}
           />{" "}
           <br />
           <input
             type="text"
-            name=""
+            name="email"
             placeholder="email"
             className="border border-black"
             id=""
+            value={input.email}
             // onChange={(e) => setEmail(e.target.value)}
-            onChange={handleInput}
+            // onChange={handleInput}
+            onChange={handleChange}
           />
           <br />
           <input
             type="text"
-            name=""
+            name="mobile"
             placeholder="mobile"
             className="border border-black"
             id=""
+            value={input.mobile}
             // onChange={(e) => setMobile(e.target.value)}
-            onChange={handleInput}
+            // onChange={handleInput}
+            onChange={handleChange}
           />
           <br />
           <input
             type="text"
-            name=""
+            name="pass"
             placeholder="password"
             className="border border-black"
             id=""
+            value={input.pass}
             // onChange={(e) => setPass(e.target.value)}
-            onChange={handleInput}
+            // onChange={handleInput}
+            onChange={handleChange}
           />
           <br />
           <input
             type="text"
-            name=""
+            name="cpass"
             placeholder="confirm password"
             className="border border-black"
             id=""
+            value={input.cpass}
             // onChange={(e) => setPass(e.target.value)}
-            onChange={handleInput}
+            // onChange={handleInput}
+            onChange={handleChange}
           />
           <br />
           <button>submit</button>
